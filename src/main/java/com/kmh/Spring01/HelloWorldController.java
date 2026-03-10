@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class HelloWorldController {
     @GetMapping("/hello")
-    public String hello(){
-        return "Hello World";
+    public String hello(@RequestParam(value = "name", defaultValue = "김민혁") String name) {
+        return "반갑습니다 " + name + "님";
     }
     @GetMapping("/student")
     public Student getStudent(@RequestParam("firstName") String firstName, @RequestParam("lastName") String lastName){
